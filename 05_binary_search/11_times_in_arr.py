@@ -1,6 +1,7 @@
 from typing import List
 import sys
 
+
 def total_rotations(arr: List[int]):
     n = len(arr)
     low = 0
@@ -9,7 +10,7 @@ def total_rotations(arr: List[int]):
     index = -1
 
     while low <= high:
-        mid = (low+high)//2
+        mid = (low + high) // 2
 
         if arr[low] <= arr[mid]:
             if arr[low] < ans:
@@ -24,5 +25,6 @@ def total_rotations(arr: List[int]):
             high = mid - 1
     return index, ans
 
-arr = [3,4,5,1,2]
-print(f'Total rotation of {arr} are {total_rotations(arr)}')
+
+arr = [3, 4, 5, 1, 2]
+print(f'Total rotation of {arr} are {total_rotations(arr)[0]}')
