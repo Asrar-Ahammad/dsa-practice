@@ -1,6 +1,5 @@
 import math
 
-
 def smallest_divisor(arr, limit):
     n = len(arr)
 
@@ -27,6 +26,6 @@ def smallest_divisor(arr, limit):
     return ans
 
 
-arr = [1, 2, 3, 4, 5]
+arr: list[int] = [1, 2, 3, 4, 5]
 limit = 8
 print(smallest_divisor(arr, limit))
