@@ -50,7 +50,12 @@ class linked_list:
     def insert_node(self, index, data):
         new_node = node(data)
 
-        if self.head is None:
+        if index> self.size():
+            print(f'The provided index is greater that LL length so the index will be {self.size()}')
+            index = self.size()
+
+        if self.head is None or index == 0:
+            new_node.next = self.head
             self.head = new_node
             return
         
@@ -63,6 +68,15 @@ class linked_list:
         
         new_node.next = prev.next
         prev.next = new_node
+
+    def search(self, val):
+        temp = self.head
+
+        while temp:
+            if temp.data == val:
+                return True
+            temp = temp.next
+        return False
 
     def display(self):
         temp = self.head
@@ -89,6 +103,7 @@ ll.insert_at_beginning(5)
 ll.display()
 ll.delete_node(3)
 ll.display()
-ll.insert_node(2,45)
+ll.insert_node(0,45)
 ll.display()
 print(ll.size())
+print(ll.search(40))
